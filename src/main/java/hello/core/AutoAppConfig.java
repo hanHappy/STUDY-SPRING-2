@@ -18,8 +18,11 @@ import hello.core.member.MemoryMemberRepository;
     excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = Configuration.class)
 )
 public class AutoAppConfig {
-    @Bean(name = "memoryMemberRepository")
-    MemberRepository memberRepository(){
-        return new MemoryMemberRepository();
-    }
+    // 처음 스프링이 로드될 때 MemoryMemberRepository가 memoryMemberRepository라는 이름으로
+    // 빈에 등록되는데 아래와 같이 동일한 이름으로 빈을 수동 등록할 경우
+    // 자동 <-> 수동 빈이름 충돌이 발생한다
+    // @Bean(name = "memoryMemberRepository")
+    // MemberRepository memberRepository(){
+    //     return new MemoryMemberRepository();
+    // }
 }

@@ -6,6 +6,11 @@ public class Order {
     private int itemPrice;
     private int discountPrice;
 
+    public Order(Long memberId, String itemName, int itemPrice) {
+        this.memberId = memberId;
+        this.itemName = itemName;
+        this.itemPrice = itemPrice;
+    }
     public Order(Long memberId, String itemName, int itemPrice, int discountPrice) {
         this.memberId = memberId;
         this.itemName = itemName;

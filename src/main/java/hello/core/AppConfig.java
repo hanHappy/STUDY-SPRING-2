@@ -17,26 +17,23 @@ public class AppConfig {
 
     // Spring Container에 등록된다
     @Bean
-    public MemberService memberService(){
+    public MemberService memberService() {
         return new MemberServiceImp(memberRepository());
     }
-    
+
     // 생성자 주입
     @Bean
     public MemoryMemberRepository memberRepository() {
         return new MemoryMemberRepository();
     }
-    
+
     @Bean
-    public OrderService orderService(){
-        return new OrderServiceImp(
-            memberRepository(), 
-            discountPolicy()
-            );
-        }
-        
+    public OrderService orderService() {
+        return new OrderServiceImp(memberRepository(), discountPolicy());
+    }
+
     @Bean
-    public DiscountPolicy discountPolicy(){
+    public DiscountPolicy discountPolicy() {
         return new FixedDiscountPolicy();
     }
 }

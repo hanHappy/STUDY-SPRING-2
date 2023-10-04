@@ -19,9 +19,9 @@ import hello.core.discount.RateDiscountPolicy;
 // 4-5
 public class ApplicationContextExtendsFindTest {
 
-    AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(TestConfig.class); //
+    AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(TestConfig.class);
 
-    @Configuration
+    // @Configuration
     static class TestConfig {
         // RateDiscountPolicy라고 할 수 있지만 DiscountPolicy 타입으로 지정하는 이유는
         // 역할과 구현의 분리를 위함

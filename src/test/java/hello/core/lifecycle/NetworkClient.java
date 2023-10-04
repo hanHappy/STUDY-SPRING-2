@@ -40,7 +40,7 @@ public class NetworkClient{
         call("초기화 연결 메시지");
     }
 
-    // 스프링 빈이 종료될 때 호출
+    // 스프링이 종료되기 직전 호출
     // 8-4 애노테이션
     @PreDestroy
     public void close() {
